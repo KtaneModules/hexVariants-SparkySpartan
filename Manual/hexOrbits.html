@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>hexOrbits — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <script src="js/ktane-utils.js"></script>
+
+    <style>
+        .inverted-field {
+            background-color: lightgray;
+        }
+
+        .centred {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .vertical-text {
+            padding: 5px;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            width: 1.5em;
+            background-color: lightgray;
+        }
+
+        .vertical-text div {
+            -moz-transform: rotate(-90.0deg);
+            /* FF3.5+ */
+            -o-transform: rotate(-90.0deg);
+            /* Opera 10.5 */
+            -webkit-transform: rotate(-90.0deg);
+            /* Saf3.1+, Chrome */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);
+            /* IE6,IE7 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+            /* IE8 */
+            margin-left: -10em;
+            margin-right: -10em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">hexOrbits</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/hexOrbits.svg" class="diagram">
+                <h2>On the Subject of hexOrbits</h2>
+                <p class="flavour-text">
+                    "These bomb-defusing people seemed to really like the hexOS Boot Manager for
+                    some reason... maybe they'll enjoy the programs that hexOS can run as well!"
+                </p>
+
+                <p>
+                    The module has a blank screen display, and four buttons around it. To activate the module, interact
+                    with the display.
+                </p>
+                <h3>Reading</h3>
+
+                <table style="float:right">
+                    <tr>
+                        <th colspan="8" class="inverted-field">hexOrbits/StaticArray</th>
+                    </tr>
+                    <tr>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>F</th>
+                        <th>0</th>
+                        <th>5</th>
+                        <th>4</th>
+                        <th>E</th>
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <th>D</th>
+                        <th>6</th>
+                        <th>3</th>
+                        <th>6</th>
+                        <th>6</th>
+                        <th>8</th>
+                        <th>B</th>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <th>1</th>
+                        <th>8</th>
+                        <th>1</th>
+                        <th>F</th>
+                        <th>9</th>
+                        <th>E</th>
+                        <th>A</th>
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <th>C</th>
+                        <th>C</th>
+                        <th>A</th>
+                        <th>9</th>
+                        <th>5</th>
+                        <th>E</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <th>1</th>
+                        <th>F</th>
+                        <th>0</th>
+                        <th>4</th>
+                        <th>C</th>
+                        <th>1</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <th>7</th>
+                        <th>C</th>
+                        <th>B</th>
+                        <th>E</th>
+                        <th>3</th>
+                        <th>5</th>
+                        <th>C</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>E</th>
+                        <th>B</th>
+                        <th>4</th>
+                        <th>7</th>
+                        <th>A</th>
+                        <th>1</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <th>3</th>
+                        <th>9</th>
+                        <th>9</th>
+                        <th>4</th>
+                        <th>8</th>
+                        <th>F</th>
+                        <th>F</th>
+                    </tr>
+                </table>
+                <p>
+                    Upon first interaction, a pointer will be randomly placed within the table array to the right.
+                    <strong>
+                        This array is one-dimensional, reads from left-to-right then top-to-bottom, and wraps
+                        around.
+                    </strong> The display will always show the pointer's cell within the table.
+                </p>
+                <p>
+                    However, this display cannot show raw text. Instead it displays two stacked shapes that
+                    represent the hexadecimal number, rotating at 2 different speeds.
+                </p>
+                <p>A table of all of the values have been marked out, with the following abbreviation:</p>
+                <table style="float: right">
+                    <tr>
+                        <th colspan="6" class="inverted-field">Shape to Hexadecimal</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" rowspan="2" class="inverted-field"></th>
+                        <th colspan="4" class="inverted-field">Fast Shape</th>
+                    </tr>
+                    <tr>
+                        <th>S</th>
+                        <th>P</th>
+                        <th>X</th>
+                        <th>H</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="4" class="vertical-text">
+                            <div>Slow shape</div>
+                        </th>
+                        <th>s</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                    <tr>
+                        <th>p</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>x</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>A</th>
+                        <th>B</th>
+                    </tr>
+                    <tr>
+                        <th>h</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                    </tr>
+                </table>
+                <center>
+                    [<strong>S</strong>]quare, [<strong>P</strong>]entagon, He[<strong>x</strong>]agon,
+                    [<strong>H</strong>]eptagon
+                </center>
+                <p>
+                    Every time an interaction is made with the module after the first, the pointer moves forward by an
+                    unchanging distance between 1-4 steps forward through the array, displaying the new value.
+                </p>
+                <p>After 4 display interactions, the pointer returns to its initial position.</p>
+                <h3>Writing</h3>
+                <p>
+                    To solve this module, take the cell that the pointer would have moved on its 5th iteration, and
+                    submit that cell by encoding it into shapes, pressing the slow-representive button first, and the
+                    fast-representive button second.
+                </p>
+                <p>
+                    <strong>
+                        You cannot undo a button press, and the module instantly submits after two button
+                        presses.
+                    </strong> Inputting the wrong hexadecimal code will cause the module to issue a strike,
+                    but this will not reset the module.
+                </p>
+            </div>
+            <div class="page-footer relative-footer">Page 1 of 1</div>
+        </div>
+    </div>
+</body>
+
+</html>
