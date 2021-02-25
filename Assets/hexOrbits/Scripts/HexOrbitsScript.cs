@@ -33,7 +33,7 @@ public class HexOrbitsScript : ModuleScript
         4,  1,  8,  1,  15, 9,  14, 10,
         15, 12, 12, 10, 9,  5,  14, 7,
         8,  1,  15, 0,  4,  12, 1,  7,
-        5,  7,  12, 11, 14, 3,  5,  12,
+        5,  7,  2,  11, 14, 3,  5,  12,
         3,  14, 11, 4,  7,  10, 1,  7,
         15, 3,  9,  9,  4,  8,  15, 15
     };
@@ -45,7 +45,7 @@ public class HexOrbitsScript : ModuleScript
     4181F9EA
     FCCA95E7
     81F04C17
-    57CBE35C
+    572BE35C
     3EB47A17
     F39948FF
     */
@@ -96,7 +96,7 @@ public class HexOrbitsScript : ModuleScript
 
         this.Log("The 4 array cells are: {0}, {1}, {2}, {3}. (with locations of: {4}, {5}, {6}, {7})".Form(stageValues[0], stageValues[1], stageValues[2], stageValues[3], locationSeed + 1, (locationSeed + movementSeed + 1) % 64, (locationSeed + (movementSeed * 2) + 1) % 64, (locationSeed + (movementSeed * 3) + 1) % 64));
 
-        this.Log("This module's solution is {0} (in location {1}), and can be submitted by pressing {2}, {3}.".Form((object)ToHex(stageValues[4]), (locationSeed + (movementSeed * 4) + 1) % 64, _directions[stageValues[4] / 4], _directions[stageValues[4] % 4]));
+        this.Log("This module's solution is {0} (in location {1}), and can be submitted by pressing {2}, {3}.".Form(ToHex(stageValues[4]), (locationSeed + (movementSeed * 4) + 1) % 64, _directions[stageValues[4] / 4], _directions[stageValues[4] % 4]));
     }
 
     private void FixedUpdate()
@@ -125,7 +125,7 @@ public class HexOrbitsScript : ModuleScript
         else
         {
             _lastInput = arg1;
-            Text.text = "Submitting... - {0}, ?".Form((object)_directions[_lastInput]);
+            Text.text = "Submitting... - {0}, ?".Form(_directions[_lastInput]);
         }
         return false;
     }
@@ -142,7 +142,7 @@ public class HexOrbitsScript : ModuleScript
 
     private IEnumerator OnSubmit(int arg1)
     {
-        Text.text = "Submitting - {0}, {1}".Form((object)_directions[_lastInput], _directions[arg1]);
+        Text.text = "Submitting - {0}, {1}".Form(_directions[_lastInput], _directions[arg1]);
         Audio.Play(transform, "Anticipation");
 
         _shrinkAnimate = 0.07f;
@@ -159,7 +159,7 @@ public class HexOrbitsScript : ModuleScript
             SlowShape.material.mainTexture = ShapeTextures[0];
             FastShape.material.mainTexture = ShapeTextures[4];
 
-            this.Log("Submitted {0} - Module solved!".Form((object)ToHex(submission)));
+            this.Log("Submitted {0} - Module solved!".Form(ToHex(submission)));
             IsSolve = true;
             Module.HandlePass();
         }
@@ -168,7 +168,7 @@ public class HexOrbitsScript : ModuleScript
             Text.text = "hexOrbits - Error!";
             Audio.Play(transform, "Strike");
 
-            this.Log("Submitted {0}, expected {1} - Strike!".Form((object)ToHex(submission), ToHex(stageValues[4])));
+            this.Log("Submitted {0}, expected {1} - Strike!".Form(ToHex(submission), ToHex(stageValues[4])));
             Module.HandleStrike();
         }
 

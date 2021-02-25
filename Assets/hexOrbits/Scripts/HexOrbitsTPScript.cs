@@ -16,7 +16,7 @@ public class HexOrbitsTPScript : TPScript {
         }
     }
 
-    internal override string TwitchHelpMessage { get { return @" !{0} press (Presses the screen once) | !{0} cycle <#> (Cycles through the four patterns, pressing the screen every # seconds (max 20, default 10)) | !{0} submit <##> (where # is LDUR, example: !{0} LD presses left, then Down respectively)"; } }
+    internal override string TwitchHelpMessage { get { return @" !{0} press (Presses the screen once) | !{0} cycle <#> (Cycles through the four patterns, pressing the screen every # seconds (max = 10, default 3)) | !{0} submit <##> (where # is LDUR, example: !{0} LD presses left, then Down respectively)"; } }
 
     internal override IEnumerator ProcessTwitchCommand(string command)
     {
@@ -39,7 +39,7 @@ public class HexOrbitsTPScript : TPScript {
 
             else
             {
-                int time = 10;
+                int time = 3;
 
                 try
                 {
@@ -51,7 +51,7 @@ public class HexOrbitsTPScript : TPScript {
                 for (int i = 0; i < 3; i++)
                 {
                     Hex.Screen.OnInteract();
-                    yield return new WaitForSecondsRealtime(Math.Min(time, 20));
+                    yield return new WaitForSecondsRealtime(Mathf.Clamp(time, 1, 10));
                 }
                 Hex.Screen.OnInteract();
             }
