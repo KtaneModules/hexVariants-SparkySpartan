@@ -8,7 +8,9 @@ Steam Description:
 Perform a cycle of automatic garbage collection for cleaning up replicated materials!
 
 Made possible with the help of Emik, and their extension, EmikBaseModules.
+
 Emik: https://steamcommunity.com/id/emik03
+
 EmikBaseModules: https://github.com/Emik03/EmikBaseModules
 
 Module ID: hexOrbits
@@ -20,6 +22,6 @@ This module has Twitch Plays support!
 Want to tell me about something? Contact me on Discord! (Spartan#8574)
 
 
-[A {hexOS Collective} message log has been attached to this module. A {Null} access level is required to access it.]
-(decrytion in progress...)
+-A {hexOS Collective} message log has been attached to this module. A {Null} access level is required to access it.-
+-decrytion in progress...-
 ---
