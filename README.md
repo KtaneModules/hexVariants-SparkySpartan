@@ -24,6 +24,7 @@ This module has Twitch Plays support!
 Want to tell me about something? Contact me on Discord! (Spartan#8574)
 
 
--A {hexOS Collective} message log has been attached to this module. A {Null} access level is required to access it.-
--decrytion in progress...-
+A {hexOS Collective} message log has been attached to this module. A {Null} access level is required to access it.
+
+decryption is in progress...
 ---
