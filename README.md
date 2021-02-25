@@ -1,5 +1,5 @@
 My first module, and the official sequel to hexOS!
-Hope you can read layered shapes
+Hope you can read layered shapes!
 
 Steam Description:
 ---
