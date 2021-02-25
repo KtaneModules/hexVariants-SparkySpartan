@@ -13,6 +13,10 @@ Emik: https://steamcommunity.com/id/emik03
 
 EmikBaseModules: https://github.com/Emik03/EmikBaseModules
 
+Additionally, the SVG for the manual was made by Janko!
+
+Janko: https://steamcommunity.com/id/GamingWithJanko/
+
 
 Module ID: hexOrbits
 
