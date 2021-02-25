@@ -7,11 +7,13 @@ Steam Description:
 
 Perform a cycle of automatic garbage collection for cleaning up replicated materials!
 
+
 Made possible with the help of Emik, and their extension, EmikBaseModules.
 
 Emik: https://steamcommunity.com/id/emik03
 
 EmikBaseModules: https://github.com/Emik03/EmikBaseModules
+
 
 Module ID: hexOrbits
 
