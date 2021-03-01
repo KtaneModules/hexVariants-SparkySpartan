@@ -16,7 +16,9 @@ public class HexOrbitsTPScript : TPScript {
         }
     }
 
-    internal override string TwitchHelpMessage { get { return @" !{0} press (Presses the screen once) | !{0} cycle <#> (Cycles through the four patterns, pressing the screen every # seconds (max = 10, default 3)) | !{0} submit <##> (where # is LDUR, example: !{0} LD presses left, then Down respectively)"; } }
+    public bool IsSolved { get; private set; }
+
+    new private const string TwitchHelpMessage = @"!{0} press (Presses the screen once) | !{0} cycle <#> (Cycles through the four patterns, pressing the screen every # seconds (max 10, default 3)) | !{0} submit <##> (where # is LDUR, example: !{0} LD presses left, then Down respectively)";
 
     internal override IEnumerator ProcessTwitchCommand(string command)
     {
@@ -73,14 +75,16 @@ public class HexOrbitsTPScript : TPScript {
                 int firstPress = validChars.IndexOf(split[1][0].ToLower()),
                     secondPress = validChars.IndexOf(split[1][1].ToLower());
 
-                yield return PushButtons(firstPress, secondPress);
+                StartCoroutine(PushButtons(firstPress, secondPress));
             }
         }
     }
 
     internal override IEnumerator TwitchHandleForcedSolve()
     {
-        yield return PushButtons(Hex.stageValues[4] / 4, Hex.stageValues[4] % 4);
+        StartCoroutine(PushButtons(Hex.stageValues[4] / 4, Hex.stageValues[4] % 4));
+        while (!IsSolved)
+            yield return true;
     }
 
     private IEnumerator PushButtons(int firstPress, int secondPress)
@@ -90,3 +94,4 @@ public class HexOrbitsTPScript : TPScript {
         Hex.Buttons[secondPress].OnInteract();
     }
 }
+
