@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9913ae3a82ab3bb47ae93dc0eb02a3d6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Determination Sans Web
+  fontNames:
+  - Determination Sans Web
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 10fca7f1e3c345844a2b617b996ea3df, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
