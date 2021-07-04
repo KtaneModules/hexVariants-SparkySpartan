@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: WorkshopItem
   m_EditorClassIdentifier: 
   WorkshopPublishedFileID: 2407181503
-  Title: hexOrbits
+  Title: hexVariants
   Tags:
   - Regular Module

@@ -14,10 +14,10 @@ MonoBehaviour:
   id: hexVariants
   title: hexVariants
   author: Spartan
-  description: 'Credits and Manuals: https://docs.google.com/document/d/1r6p2-hkSPypUDpQ-SmtwTakgLiUt20COTnePr8BYkBQ/edit
-
-
-    ""'
+  description: "hexVariants\r\n\nCredits: https://docs.google.com/document/d/1r6p2-hkSPypUDpQ-SmtwTakgLiUt20COTnePr8BYkBQ/edit?usp=sharing\n\r\n\"Funding
+    for these programs was made possible by the Keep Coding and Nobody Explodes Library,
+    and by annual moral support from viewers like you.\"\r\n\r\nLatest Manual (hexNull):
+    https://github.com/SparkySpartan/hexVariants/raw/main/Manual/pdfs/Modules/hexNull%20%E2%80%94%20Keep%20Talking%20and%20Nobody%20Explodes%20Module.pdf\r\n\r\n"
   version: 2
   outputFolder: build
-  previewImage: {fileID: 2800000, guid: 64b2223364824d346a66e19b49b608ee, type: 3}
+  previewImage: {fileID: 2800000, guid: d4a2392403b57e54791631588504ff7a, type: 3}
