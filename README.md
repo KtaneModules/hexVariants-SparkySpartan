@@ -1,25 +1,20 @@
-hexVariants
+On the Subject of hexVariants
+------------------------------------------------------------------------------------------------------
 
 "Funding for these programs was made possible by the Keep Coding and Nobody Explodes Library, and by annual moral support from viewers like you."
 
-Latest Manual (hexNull): https://github.com/SparkySpartan/hexVariants/raw/main/Manual/pdfs/Modules/hexNull%20%E2%80%94%20Keep%20Talking%20and%20Nobody%20Explodes%20Module.pdf
+------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------------
+https://docs.google.com/document/d/1r6p2-hkSPypUDpQ-SmtwTakgLiUt20COTnePr8BYkBQ/edit?usp=sharing
 
+Refer to this link to see everything/everyone that has contributed to this mod!
 
-Made possible with the help of Emik, and their extension, Keep Coding and Nobody Explodes.
+This link also has extensive lore about these modules - if that's your thing, it might interest you!
 
-Emik: https://steamcommunity.com/id/emik03
+------------------------------------------------------------------------------------------------------
 
-EmikBaseModules: https://github.com/Emik03/KeepCoding
+hexVariants is a set of modules designed to carry on the story of hexOS! (a module which is not in this pack - refer to Emik's Modules to play that module!)
 
-Additionally, the SVG for these manual were made by Janko!
+This is the github repository, in case something happens to me that means I can't continue maintaining modules - Feel free to reference the content contained in any way you wish!
 
-Janko: https://steamcommunity.com/id/GamingWithJanko/
-
-
-Current Modules (in chronological order:)
-
-hexOrbits
-
-hexNull
+------------------------------------------------------------------------------------------------------
