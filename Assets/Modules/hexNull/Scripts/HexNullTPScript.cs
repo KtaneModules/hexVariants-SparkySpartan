@@ -41,9 +41,6 @@ public class HexNullTPScript : TPScript<HexNullScript>
             }
 
         }
-
-
-        yield return null;
     }
 
     public override IEnumerator TwitchHandleForcedSolve()
