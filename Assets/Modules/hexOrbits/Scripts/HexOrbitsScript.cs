@@ -8,9 +8,9 @@ using Rnd = UnityEngine.Random;
 public class HexOrbitsScript : ModuleScript
 {
     /*
-    I know you're going to copy over the templates for new modules, so heres a reminder that you shouldn't get rid of:
+    I know you're going to copy over this basic template for new modules, so heres a reminder that you shouldn't get rid of:
     MAKE SURE TO ATTACH mod.bundle TO MODULE PREFABS AND ALL SOUNDS! If hexVariants 2.0 happens again, there is no one to blame but yourself.
-    (massive thank you for bugfixing to River!)
+    (+ a thank you to emik and river for making sure the time of which issues were happening was only a day long)
     */
 
     public KMSelectable Screen;

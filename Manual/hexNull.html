@@ -2,18 +2,27 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>hexNull — Keep Talking and Nobody Explodes Module</title>
     <meta name="viewport" content="initial-scale=1">
+    <title>hexNull — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/font.css">
     <script src="js/ktane-utils.js"></script>
 
     <style>
         .centred {
             margin: 1em auto;
+        }
+
+        @media print {
+            a[href]:after {
+                content: "";
+            }
+        }
+
+        .dark table, table {
+            border: none;
         }
     </style>
 
@@ -36,10 +45,8 @@
 
                 <p>
                     See Appendix BT in <a href="https://ktane.timwi.de/HTML/Binary%20Tree.html">Binary Tree</a> for binary tree terminology.
-                </p>
-
-                <p>
-                    This module has two directional buttons and a screen. To activate the module, interact with the display.
+                    This module has two directional buttons and a screen.     
+                    Interacting with the display will activate the module.
                 </p>
 
                 <p>
@@ -61,15 +68,15 @@
 
                 <table class="centred">
                     <tr>
-                        <th></th>
+                        <th class='corner'></th>
                         <th>Digit 1 | (#--)</th>
                         <th>Digit 2 | (-#-)</th>
                         <th>Digit 3 | (--#)</th>
                     </tr>
                     <tr>
-                        <th></th>
+                        <th class='corner'></th>
                         <th>Sound is...</th>
-                        <th>Color is...</th>
+                        <th>Square is...</th>
                         <th>Line is...</th>
                     </tr>
                     <tr>
