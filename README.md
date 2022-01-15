@@ -1,7 +1,7 @@
 On the Subject of hexVariants
 ------------------------------------------------------------------------------------------------------
 
-"Funding for these programs was made possible by the Keep Coding and Nobody Explodes Library, and by annual moral support from viewers like you."
+"Funding for these programs was made possible by the Keep Coding Library, and by annual moral support from viewers like you."
 
 ------------------------------------------------------------------------------------------------------
 
