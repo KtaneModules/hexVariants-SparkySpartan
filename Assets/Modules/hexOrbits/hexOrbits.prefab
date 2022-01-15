@@ -1735,6 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab177f47196516438f6980f706be6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _editorRuleSeed: 1
   Screen: {fileID: 114718085161755042}
   Buttons:
   - {fileID: 114512191837306938}
@@ -1995,8 +1996,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TwitchHelpMessage: '!{0} press (Presses the screen once) | !{0} cycle <#> (Cycles
     through the four patterns, pressing the screen every # seconds (max 10, default
-    3)) | !{0} submit <##> (where # is LDUR, example: !{0} press LD presses left,
+    3)) | !{0} submit <##> (where # is LDUR, example: !{0} submit LD presses left,
     then down respectively)'
+  TwitchManualCode: 
+  TwitchAbandonModule: []
 --- !u!114 &114874173906988132
 MonoBehaviour:
   m_ObjectHideFlags: 1

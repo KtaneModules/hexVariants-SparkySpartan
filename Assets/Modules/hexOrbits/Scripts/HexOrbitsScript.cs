@@ -53,7 +53,7 @@ public class HexOrbitsScript : ModuleScript
     /// <summary>
     /// Stage counter for the module. (-1 = init, 0-3 = Stages)
     /// </summary>
-    private int _stage = -1;
+    internal int _stage = -1;
 
     private int _lastInput = -1, _stageDisplay = -1;
 
@@ -62,7 +62,7 @@ public class HexOrbitsScript : ModuleScript
     private Routine<int> routine;
 
 
-    //base functions, made easy with e̶m̶i̶k̶b̶a̶s̶e̶m̶o̶d̶u̶l̶e̶s̶  keep coding and nobody explodes!
+    //base functions, made easy with keep coding!
 
     private void Start()
     {
@@ -82,7 +82,7 @@ public class HexOrbitsScript : ModuleScript
             stageValues[i] = _tableValues.ElementAtWrap(locationSeed + (movementSeed * i));
         }
 
-        Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexOrbits - Idle";
+        GetChild<TextMesh>().text = "hexOrbits - Idle";
 
         Log("The 4 array cells are: {0}, {1}, {2}, {3}. (with locations of: {4}, {5}, {6}, {7})".Form(ToHex(stageValues[0]), ToHex(stageValues[1]), ToHex(stageValues[2]), ToHex(stageValues[3]), locationSeed + 1, (locationSeed + movementSeed + 1) % 64, (locationSeed + (movementSeed * 2) + 1) % 64, (locationSeed + (movementSeed * 3) + 1) % 64));
 
@@ -115,7 +115,7 @@ public class HexOrbitsScript : ModuleScript
         else
         {
             _lastInput = arg1;
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = "Submitting... - {0}, ?".Form(_directions[_lastInput]);
+            GetChild<TextMesh>().text = "Submitting... - {0}, ?".Form(_directions[_lastInput]);
         }
     }
     
@@ -130,7 +130,7 @@ public class HexOrbitsScript : ModuleScript
 
     private IEnumerator OnSubmit(int arg1)
     {
-        Cache(GetComponentsInChildren<TextMesh>)[0].text = "Submitting - {0}, {1}".Form(_directions[_lastInput], _directions[arg1]);
+        GetChild<TextMesh>().text = "Submitting - {0}, {1}".Form(_directions[_lastInput], _directions[arg1]);
         PlaySound("OrbitsAnticipation");
 
         _shrinkAnimate = 0.07f;
@@ -141,7 +141,7 @@ public class HexOrbitsScript : ModuleScript
 
         if (submission == stageValues[4])
         {
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexOrbits - Complete!";
+            GetChild<TextMesh>().text = "hexOrbits - Complete!";
             PlaySound("OrbitsSolve");
 
             SlowShape.material.mainTexture = ShapeTextures[0];
@@ -151,7 +151,7 @@ public class HexOrbitsScript : ModuleScript
         }
         else
         {
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexOrbits - Error!";
+            GetChild<TextMesh>().text = "hexOrbits - Error!";
             PlaySound("OrbitsStrike");
 
             Strike("Submitted {0}, expected {1} - Strike!".Form(ToHex(submission), ToHex(stageValues[4])));
@@ -169,7 +169,7 @@ public class HexOrbitsScript : ModuleScript
         int currentStage = stageValues[_stage];
         SlowShape.material.mainTexture = ShapeTextures[currentStage / 4];
         FastShape.material.mainTexture = ShapeTextures[currentStage % 4];
-        Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexOrbits - Index {0} of 4".Form(_stageDisplay + 1);
+        GetChild<TextMesh>().text = "hexOrbits - Index {0} of 4".Form(_stageDisplay + 1);
     }
 
 

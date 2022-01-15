@@ -7,32 +7,35 @@ using UnityEngine;
 public class HexNullTPScript : TPScript<HexNullScript>
 {
     // pretty much just yoinked this part from hexOrbits with a few modifications
-    public override IEnumerator ProcessTwitchCommand(string command)
+    public override IEnumerator Process(string command)
     {
         string[] split = command.Split();
 
         if (IsMatch(split[0], "reset"))
         {
-            yield return null;
             if (split.Length != 1)
                 yield return SendToChatError("Too many parameters!");
             else
+            {
+                yield return null;
                 Module.Screen.OnInteract();
+            }
         }
 
         else if (IsMatch(split[0], "press"))
         {
-            yield return null;
             const string validChars = "01lr";
 
             if (split.Length != 2)
                 yield return SendToChatError(split.Length < 2 ? "You need to specify an input!" : "Too many parameters!");
             else if (split[1].Length != 3)
-                yield return SendToChatError("Expected 3 inputs as the parameter.");
+                yield return SendToChatError("Expected 3 inputs as the parameters!");
             else if (split[1].Any(c => !validChars.Contains(c.ToLower())))
                 yield return SendToChatError("Expected all characters to be 0/L or 1/R!");
             else
             {
+                yield return null;
+
                 int firstPress = validChars.IndexOf(split[1][0].ToLower()) % 2,
                     secondPress = validChars.IndexOf(split[1][1].ToLower()) % 2,
                     thirdPress = validChars.IndexOf(split[1][2].ToLower()) % 2;
@@ -41,9 +44,14 @@ public class HexNullTPScript : TPScript<HexNullScript>
             }
 
         }
+
+        else
+        {
+            yield return SendToChatError("No command found with that name!");
+        }
     }
 
-    public override IEnumerator TwitchHandleForcedSolve()
+    public override IEnumerator ForceSolve()
     {
         /*
         this autosolve is way more complex than hexOrbits' "press two buttons, solve module" - let's explain it:

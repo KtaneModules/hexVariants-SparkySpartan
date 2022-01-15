@@ -83,7 +83,9 @@ public class HexNullScript : ModuleScript
         GenerateSolution();
         CreateQueue();
 
-        Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nIdle";
+
+
+        GetChild<TextMesh>().text = "hexNull\nIdle";
     }
 	
 	// Update is called once per frame
@@ -123,7 +125,7 @@ public class HexNullScript : ModuleScript
             _depth = 0;
 
             // remember, ternary operators look cool, and you should use them whenever possible
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = _moduleActive ? "hexNull\nIteration reset." : "hexNull\nIteration loaded.";
+            GetChild<TextMesh>().text = _moduleActive ? "hexNull\nIteration reset." : "hexNull\nIteration loaded.";
 
             // this shouldn't be able to pull positions that have been seen recently -
 
@@ -163,14 +165,14 @@ public class HexNullScript : ModuleScript
             {
                 if (_location == entityPosition)
                 {
-                    Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nIteration corrupted.";
+                    GetChild<TextMesh>().text = "hexNull\nIteration corrupted.";
                     routine.Start(arg1);
                 }
                 else
                 {
                     submission[_location] = (submission[_location] + 1) % 2;
                     submission[entityPosition] = (submission[entityPosition] + 1) % 2;
-                    Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nWritten to nodes {0} and {1}.".Form(_location, entityPosition);
+                    GetChild<TextMesh>().text = "hexNull\nWritten to nodes {0} and {1}.".Form(_location, entityPosition);
                     PlaySound("NullWrite");
                     Log("Data written on interaction {0} - Player is in position {1}, Entity is in position {2} - current submission value is {3}.".Form(_interactions, _location, entityPosition, submission.Join("")));
                 }
@@ -179,7 +181,7 @@ public class HexNullScript : ModuleScript
             else
             {
                 PlaySound("NullStep");
-                Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nIteration in progress...";
+                GetChild<TextMesh>().text = "hexNull\nIteration in progress...";
             }
         }
     }
@@ -196,7 +198,7 @@ public class HexNullScript : ModuleScript
         {
             if (i > 7)
             {
-                Module.Solve();
+                Solve("Severe error occured - no possible combination found from base input. Defaulting to solved state.");
                 throw new IndexOutOfRangeException();
             }
             // there's a lot going on here, so let's break it down:
@@ -221,7 +223,7 @@ public class HexNullScript : ModuleScript
 
     private IEnumerator EntityCollision(int arg1)
     {
-        Cache(GetComponentsInChildren<TextMesh>)[0].text = "";
+        GetChild<TextMesh>().text = "";
         _moduleDisabled = true;
         if (submission.Max() == 0)
         {
@@ -240,19 +242,18 @@ public class HexNullScript : ModuleScript
             yield return new WaitForSecondsRealtime(3);
 
             _moduleDisabled = false;
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nAwaiting new input.";
+            GetChild<TextMesh>().text = "hexNull\nAwaiting new input.";
         }
         else
         {
             PlaySound("NullAnticipation");
-            Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nVerifying data...";
+            GetChild<TextMesh>().text = "hexNull\nVerifying data...";
             yield return new WaitForSecondsRealtime(2.5f);
 
             if (submission.SequenceEqual(solution))
             {
-                Log("Player interacted with entity on interaction {0}. Submission array was {1} against {2} - Solved.".Form(_interactions, submission.Join(""), solution.Join("")));
                 PlaySound("NullSolve");
-                Module.Solve();
+                Solve("Player interacted with entity on interaction {0}. Submission array was {1} against {2} - Escape attempt successful.".Form(_interactions, submission.Join(""), solution.Join("")));
 
                 LeftPlane.color = new Color { r = 255, b = 255, g = 255, a = 1f };
                 MiddlePlane.color = new Color { r = 255, b = 255, g = 255, a = 1f };
@@ -260,7 +261,7 @@ public class HexNullScript : ModuleScript
 
                 _solveAnimation += 10;
                 _solveAnimationIncrement += 1;
-                Cache(GetComponentsInChildren<TextMesh>)[0].text = "";
+                GetChild<TextMesh>().text = "";
 
                 yield return new WaitForSecondsRealtime(10);
 
@@ -271,14 +272,13 @@ public class HexNullScript : ModuleScript
                 MiddlePlane.color = new Color { r = 255, b = 255, g = 255, a = _opacity };
                 RightPlane.color = new Color { r = 255, b = 255, g = 255, a = _opacity };
 
-                Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\nMemory restored.";
+                GetChild<TextMesh>().text = "hexNull\nMemory restored.";
             }
             else
             {
-                Log("Player interacted with entity on interaction {0}. Submission array was {1} against {2} - Strike.".Form(_interactions, submission.Join(""), solution.Join("")));
                 PlaySound("NullStrike");
-                Module.Strike();
-                Cache(GetComponentsInChildren<TextMesh>)[0].text = "hexNull\n{0} not found.".Form(submission.Join(""));
+                Strike("Player interacted with entity on interaction {0}. Submission array was {1} against {2} - Escape attempt failed. Resetting array back to default state.".Form(_interactions, submission.Join(""), solution.Join("")));
+                GetChild<TextMesh>().text = "hexNull\n{0} not found.".Form(submission.Join(""));
                 submission = new int[8];
                 _moduleDisabled = false;
                 

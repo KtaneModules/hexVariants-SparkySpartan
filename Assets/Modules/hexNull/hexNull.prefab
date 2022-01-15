@@ -903,6 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e666deca83617c24097318b8d895c3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _editorRuleSeed: 1
   Screen: {fileID: 114700353903901696}
   Buttons:
   - {fileID: 114375435997662336}
@@ -1169,6 +1170,8 @@ MonoBehaviour:
   TwitchHelpMessage: '!{0} reset (Presses the screen once) | !{0} press <###> (where
     # is either 0/1 or L/R - Pushes the left and right buttons in the specified order,
     example: {0} press 011 presses left, than right, than right again)'
+  TwitchManualCode: 
+  TwitchAbandonModule: []
 --- !u!114 &114943700256557118
 MonoBehaviour:
   m_ObjectHideFlags: 1
